@@ -20,5 +20,15 @@ namespace BMS_Final.Bill
         {
             return _categoryRepository.ShowCategories(_category);
         }
+
+        public List<Category> SearchCategoriesCode(Category _category)
+        {
+            return _categoryRepository.SearchCategoriesCode(_category);
+        }
+
+        public List<Category> SearchCategoriesName(Category _category)
+        {
+            return _categoryRepository.SearchCategoriesName(_category);
+        }
     }
 }

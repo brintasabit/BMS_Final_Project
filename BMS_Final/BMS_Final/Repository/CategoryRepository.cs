@@ -47,5 +47,44 @@ namespace BMS_Final.Repository
             return categories;
 
         }
+
+        public List<Category> SearchCategoriesCode(Category _category)
+        {
+            List<Category> categories=new List<Category>();
+            string connectionString = @"Server=BRINTA-PC; Database=BMS; Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string commandString = @"select * from Category where Code='"+_category.Code+"'";
+            SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                Category category=new Category();
+                category.Code = sqlDataReader["Code"].ToString();
+                category.Name = sqlDataReader["Name"].ToString();
+                categories.Add(category);
+            }
+            sqlConnection.Close();
+            return categories;
+        }
+        public List<Category> SearchCategoriesName(Category _category)
+        {
+            List<Category> categories=new List<Category>();
+            string connectionString = @"Server=BRINTA-PC; Database=BMS; Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string commandString = @"select * from Category where Name='"+_category.Name+"'";
+            SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                Category category=new Category();
+                category.Code = sqlDataReader["Code"].ToString();
+                category.Name = sqlDataReader["Name"].ToString();
+                categories.Add(category);
+            }
+            sqlConnection.Close();
+            return categories;
+        }
     }
 }
