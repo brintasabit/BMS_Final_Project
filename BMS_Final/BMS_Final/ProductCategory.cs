@@ -77,5 +77,11 @@ namespace BMS_Final
         {
             dataGridViewCategory.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
+
+        private void dataGridViewCategory_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxCode.Text = dataGridViewCategory.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxName.Text= dataGridViewCategory.SelectedRows[0].Cells[2].Value.ToString();
+        }
     }
 }

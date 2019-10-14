@@ -35,10 +35,10 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -99,13 +99,11 @@
             this.dataGridViewCategory.Location = new System.Drawing.Point(187, 343);
             this.dataGridViewCategory.Name = "dataGridViewCategory";
             this.dataGridViewCategory.RowTemplate.Height = 28;
+            this.dataGridViewCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCategory.Size = new System.Drawing.Size(525, 150);
             this.dataGridViewCategory.TabIndex = 4;
             this.dataGridViewCategory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewCategory_RowPostPaint);
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(BMS_Final.Model.Category);
+            this.dataGridViewCategory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewCategory_MouseClick);
             // 
             // SL
             // 
@@ -125,6 +123,10 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(BMS_Final.Model.Category);
             // 
             // ProductCategory
             // 
