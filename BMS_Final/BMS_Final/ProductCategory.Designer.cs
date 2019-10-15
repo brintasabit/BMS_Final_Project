@@ -126,7 +126,7 @@
             // 
             // categoryBindingSource
             // 
-            this.categoryBindingSource.DataSource = typeof(BMS_Final.Model.Category);
+//            this.categoryBindingSource.DataSource = typeof(BMS_Final.Model.Category);
             // 
             // ProductCategory
             // 
